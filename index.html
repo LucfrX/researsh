@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Travail de recherche : incident, complication et accident — définitions, exemples et points de différence." />
+  <title>Incident, complication et accident — Travail de recherche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #faf9f7;
+      --surface: #ffffff;
+      --text: #1a1917;
+      --muted: #5c5a56;
+      --accent: #0d5c4a;
+      --accent-soft: rgba(13, 92, 74, 0.08);
+      --border: #e8e6e1;
+      --shadow: 0 1px 3px rgba(26, 25, 23, 0.06);
+      --radius: 12px;
+      --max-read: 42rem;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      font-size: clamp(1rem, 0.92rem + 0.35vw, 1.0625rem);
+      scroll-behavior: smooth;
+      color-scheme: light;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    body {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100dvh;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      z-index: 100;
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow);
+    }
+
+    .site-header__inner {
+      max-width: min(100%, 72rem);
+      margin-inline: auto;
+      padding: clamp(1rem, 3vw, 1.35rem) clamp(1.25rem, 4vw, 2rem);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+    }
+
+    .site-header__title {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .site-header__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header__title a:hover {
+      color: var(--accent);
+    }
+
+    .site-header__meta {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .layout {
+      max-width: min(100%, 72rem);
+      margin-inline: auto;
+      padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2rem) clamp(3rem, 8vw, 4.5rem);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(2rem, 5vw, 3rem);
+    }
+
+    @media (min-width: 62rem) {
+      .layout {
+        grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+        align-items: start;
+      }
+    }
+
+    .toc {
+      position: sticky;
+      top: calc(4.5rem + env(safe-area-inset-top, 0px));
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .toc__heading {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .toc ul {
+      list-style: none;
+      font-size: 0.875rem;
+    }
+
+    .toc li + li {
+      margin-top: 0.45rem;
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      padding-left: 0.5rem;
+      margin-left: -0.5rem;
+      display: block;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    .toc a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    article {
+      max-width: var(--max-read);
+    }
+
+    .article-hero {
+      margin-bottom: clamp(2rem, 5vw, 2.75rem);
+      padding-bottom: clamp(1.5rem, 4vw, 2rem);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-hero__kicker {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.65rem;
+    }
+
+    .article-hero h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.75rem, 1.25rem + 2vw, 2.35rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    .article-hero__lead {
+      font-size: 1.0625rem;
+      color: var(--muted);
+      max-width: 38ch;
+    }
+
+    .article-body section {
+      margin-bottom: clamp(2rem, 5vw, 2.75rem);
+    }
+
+    .article-body h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.35rem, 1.1rem + 1vw, 1.6rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      padding-top: 0.25rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .article-body h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 1.35rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .article-body p {
+      margin-bottom: 0.85rem;
+    }
+
+    .article-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-body ul {
+      margin: 0.65rem 0 0.85rem 1.25rem;
+    }
+
+    .article-body li {
+      margin-bottom: 0.4rem;
+    }
+
+    .article-body li::marker {
+      color: var(--accent);
+    }
+
+    .term-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .term-block:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .term-block h3 {
+      margin-top: 0;
+      font-size: 1.05rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1rem 0 0;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 36rem;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    th,
+    td {
+      padding: 0.75rem 0.9rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      font-weight: 600;
+      background: var(--accent-soft);
+      color: var(--text);
+      font-size: 0.8125rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .howto {
+      background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 60%);
+      border-left: 3px solid var(--accent);
+      padding: 1.15rem 1.25rem 1.15rem 1.35rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-top: 0.5rem;
+    }
+
+    .howto ol {
+      margin: 0.5rem 0 0 1.1rem;
+      padding: 0;
+    }
+
+    .howto li {
+      margin-bottom: 0.65rem;
+    }
+
+    .howto li:last-child {
+      margin-bottom: 0;
+    }
+
+    .howto__gap {
+      margin-top: 1rem;
+    }
+
+    .outro {
+      margin-top: 2rem;
+      padding: 1.25rem 1.35rem;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      max-width: min(100%, 72rem);
+      margin-inline: auto;
+      padding: 1.5rem clamp(1.25rem, 4vw, 2rem) 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8125rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-header__title"><a href="#top">Travail de recherche</a></p>
+      <p class="site-header__meta">Incident · Complication · Accident</p>
+    </div>
+  </header>
+
+  <div class="layout" id="top">
+    <nav class="toc" aria-labelledby="toc-heading">
+      <p class="toc__heading" id="toc-heading">Sommaire</p>
+      <ul>
+        <li><a href="#definitions">1. Définitions</a></li>
+        <li><a href="#exemples">2. Exemples concrets</a></li>
+        <li><a href="#differences">3. Points de différence</a></li>
+        <li><a href="#distinguer">4. Comment les distinguer</a></li>
+      </ul>
+    </nav>
+
+    <article id="contenu">
+      <header class="article-hero">
+        <p class="article-hero__kicker">Recherche documentaire</p>
+        <h1>Incident, complication et accident</h1>
+        <p class="article-hero__lead">
+          Définitions, exemples et points de différence — matériel utilisable pour un exposé ou un devoir écrit, en stage ou en travail de recherche.
+        </p>
+      </header>
+
+      <div class="article-body">
+        <section id="definitions" aria-labelledby="h-definitions">
+          <h2 id="h-definitions">1. Définitions</h2>
+
+          <div class="term-block">
+            <h3>Incident</h3>
+            <p>
+              Un incident est un événement <strong>non souhaité</strong> qui peut affecter le bon déroulement d’une activité, mais qui <strong>n’entraîne pas forcément de dommage grave</strong> (blessure, perte matérielle importante, etc.).
+            </p>
+            <p>
+              Dans un contexte de recherche ou de travail, il peut s’agir d’une erreur, d’un dysfonctionnement, d’un manquement aux procédures, ou d’une situation à risque détectée à temps.
+            </p>
+          </div>
+
+          <div class="term-block">
+            <h3>Complication</h3>
+            <p>
+              Une complication est une <strong>conséquence inattendue</strong> (souvent défavorable) qui survient <strong>dans le cadre normal d’une situation connue ou d’une activité à risque</strong> (chirurgie, recherche clinique, travail dangereux, etc.).
+            </p>
+            <p>
+              Elle est généralement liée à la nature du processus ou de la pathologie, même si les règles ont été respectées.
+            </p>
+          </div>
+
+          <div class="term-block">
+            <h3>Accident</h3>
+            <p>
+              Un accident est un <strong>événement soudain, inopiné et involontaire</strong>, causant des dommages matériels ou corporels.
+            </p>
+            <p>
+              Dans le travail ou la recherche, il survient souvent à la suite de risques mal gérés, d’une erreur ou d’une défaillance, et peut entraîner blessures, incapacité, voire décès.
+            </p>
+          </div>
+        </section>
+
+        <section id="exemples" aria-labelledby="h-exemples">
+          <h2 id="h-exemples">2. Exemples concrets</h2>
+
+          <h3>Exemple d’incident (sans gravité apparente)</h3>
+          <ul>
+            <li>En laboratoire de recherche : un étudiant casse un tube de réactif mais sans blessure ni fuite dangereuse.</li>
+            <li>Sur un chantier : un ouvrier laisse tomber un outil, qui ne touche personne mais aurait pu le faire.</li>
+          </ul>
+
+          <h3>Exemple de complication</h3>
+          <ul>
+            <li>En médecine : un patient subit une chirurgie prévue et « sans faute médicale », mais développe une infection post-opératoire ou une réaction allergique imprévue.</li>
+            <li>En recherche clinique : un volontaire a une réaction secondaire grave à un médicament, alors que le protocole est bien appliqué et connu pour comporter ce risque.</li>
+          </ul>
+
+          <h3>Exemple d’accident</h3>
+          <ul>
+            <li>Un travailleur de maintenance se fait écraser le bras dans une machine pendant une intervention.</li>
+            <li>Un chercheur manipule un produit inflammable sans précaution, provoque une explosion et subit des brûlures.</li>
+          </ul>
+        </section>
+
+        <section id="differences" aria-labelledby="h-differences">
+          <h2 id="h-differences">3. Points de différence principaux</h2>
+          <div class="table-wrap" role="region" aria-label="Tableau comparatif incident, complication, accident" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Critère</th>
+                  <th scope="col">Incident</th>
+                  <th scope="col">Complication</th>
+                  <th scope="col">Accident</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Nature de l’événement</th>
+                  <td>Événement à risque ou manquement détecté</td>
+                  <td>Conséquence inattendue mais possible dans le contexte</td>
+                  <td>Événement soudain, inopiné, avec dommages</td>
+                </tr>
+                <tr>
+                  <th scope="row">Niveau de gravité</th>
+                  <td>Souvent mineur, parfois sans dommage</td>
+                  <td>Variable, souvent significatif mais prévu dans le risque</td>
+                  <td>Généralement grave (blessure, dégâts)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Peut-on l’éviter ?</th>
+                  <td>Oui, grâce au respect des règles et au contrôle</td>
+                  <td>Parfois non, même avec bonne exécution</td>
+                  <td>Souvent évitable par meilleure prévention</td>
+                </tr>
+                <tr>
+                  <th scope="row">Cadre typique</th>
+                  <td>Travail, recherche, transport, sécurité</td>
+                  <td>Surtout médical et recherche clinique</td>
+                  <td>Travail, laboratoire, transports, industrie</td>
+                </tr>
+                <tr>
+                  <th scope="row">Responsabilité / faute</th>
+                  <td>Souvent liée à une erreur ou négligence</td>
+                  <td>Peut être « aléa thérapeutique » ou risque connu</td>
+                  <td>Souvent liée à faute ou défaut de sécurité</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="distinguer" aria-labelledby="h-distinguer">
+          <h2 id="h-distinguer">4. Comment les distinguer dans un travail de recherche ou de stage ?</h2>
+          <p>
+            Pour ne pas confondre ces trois termes, on peut se poser deux questions simples, inspirées des guides de gestion des incidents médicaux et de sécurité :
+          </p>
+          <div class="howto">
+            <p><strong>1. Pouvait-on éviter l’événement ?</strong></p>
+            <ul>
+              <li>Si oui → souvent un <strong>incident</strong> ou un <strong>accident</strong> lié à une défaillance.</li>
+              <li>Si non, même en suivant les règles → plutôt une <strong>complication</strong>.</li>
+            </ul>
+            <p class="howto__gap"><strong>2. Quel est le niveau de gravité et de dommage ?</strong></p>
+            <ul>
+              <li>Dommage léger ou sans dommage → <strong>incident</strong>.</li>
+              <li>Issue défavorable mais prévisible dans le risque → <strong>complication</strong>.</li>
+              <li>Dommage grave soudain → <strong>accident</strong>.</li>
+            </ul>
+          </div>
+        </section>
+
+        <aside class="outro" aria-label="Pistes complémentaires">
+          <p>
+            Ce contenu peut servir de base pour une <strong>fiche de révision</strong> (format court, style QCM) ou un <strong>plan détaillé</strong> de compte-rendu (introduction, développement, conclusion).
+          </p>
+        </aside>
+      </div>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <p>Travail de recherche — Incident, complication, accident</p>
+  </footer>
+</body>
+</html>
