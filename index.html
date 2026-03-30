@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Travail de recherche : incident, complication et accident — définitions, exemples et points de différence." />
+  <meta name="description" content="Travail de recherche dense : incident, complication, accident — définitions, dimensions, exemples, tableau comparatif, notions connexes et repères pour devoir ou stage." />
   <title>Incident, complication et accident — Travail de recherche</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
       --border: #e8e6e1;
       --shadow: 0 1px 3px rgba(26, 25, 23, 0.06);
       --radius: 12px;
-      --max-read: 42rem;
+      --max-read: 46rem;
     }
 
     html {
@@ -122,7 +122,7 @@
 
     @media (min-width: 62rem) {
       .layout {
-        grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
         align-items: start;
       }
     }
@@ -207,8 +207,16 @@
       max-width: 38ch;
     }
 
+    .article-body--dense {
+      line-height: 1.58;
+    }
+
     .article-body section {
       margin-bottom: clamp(2rem, 5vw, 2.75rem);
+    }
+
+    .article-body.article-body--dense section {
+      margin-bottom: clamp(1.65rem, 4vw, 2.35rem);
     }
 
     .article-body h2 {
@@ -230,8 +238,31 @@
       color: var(--text);
     }
 
+    .article-body--dense h3 {
+      margin-top: 1.1rem;
+      font-size: 1.0625rem;
+    }
+
+    .article-body h4 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      margin-top: 0.85rem;
+      margin-bottom: 0.35rem;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+
     .article-body p {
       margin-bottom: 0.85rem;
+    }
+
+    .article-body--dense p {
+      margin-bottom: 0.65rem;
+    }
+
+    .article-body--dense .term-block p:last-of-type {
+      margin-bottom: 0;
     }
 
     .article-body p:last-child {
@@ -242,8 +273,59 @@
       margin: 0.65rem 0 0.85rem 1.25rem;
     }
 
+    .article-body--dense ul {
+      margin: 0.45rem 0 0.65rem 1.2rem;
+    }
+
     .article-body li {
       margin-bottom: 0.4rem;
+    }
+
+    .article-body--dense li {
+      margin-bottom: 0.32rem;
+    }
+
+    .dimensions-block {
+      margin-top: 0.75rem;
+    }
+
+    .dimensions-block > li {
+      margin-bottom: 1rem;
+    }
+
+    .dimensions-block > li:last-child {
+      margin-bottom: 0;
+    }
+
+    .dimensions-block ul {
+      margin-top: 0.4rem;
+      margin-bottom: 0;
+    }
+
+    .notion-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 0.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .notion-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .notion-card h3 {
+      margin-top: 0;
+      font-size: 1rem;
+    }
+
+    .notion-card p {
+      margin-bottom: 0.5rem;
+    }
+
+    .notion-card p:last-child {
+      margin-bottom: 0;
     }
 
     .article-body li::marker {
@@ -257,6 +339,11 @@
       padding: 1.15rem 1.25rem;
       margin-bottom: 1rem;
       box-shadow: var(--shadow);
+    }
+
+    .article-body--dense .term-block {
+      padding: 1rem 1.15rem;
+      margin-bottom: 0.85rem;
     }
 
     .term-block:last-of-type {
@@ -279,9 +366,13 @@
 
     table {
       width: 100%;
-      min-width: 36rem;
+      min-width: 44rem;
       border-collapse: collapse;
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
+    }
+
+    .article-body--dense table {
+      font-size: 0.78rem;
     }
 
     th,
@@ -363,10 +454,12 @@
     <nav class="toc" aria-labelledby="toc-heading">
       <p class="toc__heading" id="toc-heading">Sommaire</p>
       <ul>
-        <li><a href="#definitions">1. Définitions</a></li>
-        <li><a href="#exemples">2. Exemples concrets</a></li>
-        <li><a href="#differences">3. Points de différence</a></li>
-        <li><a href="#distinguer">4. Comment les distinguer</a></li>
+        <li><a href="#definitions">1. Définitions détaillées</a></li>
+        <li><a href="#dimensions">2. Gravité, prévisibilité, responsabilité</a></li>
+        <li><a href="#exemples">3. Exemples variés</a></li>
+        <li><a href="#differences">4. Tableau comparatif</a></li>
+        <li><a href="#notions">5. Notions connexes</a></li>
+        <li><a href="#recherche">6. Repères pour un travail de recherche</a></li>
       </ul>
     </nav>
 
@@ -379,66 +472,101 @@
         </p>
       </header>
 
-      <div class="article-body">
+      <div class="article-body article-body--dense">
         <section id="definitions" aria-labelledby="h-definitions">
-          <h2 id="h-definitions">1. Définitions</h2>
+          <h2 id="h-definitions">1. Définitions détaillées</h2>
 
           <div class="term-block">
             <h3>Incident</h3>
             <p>
-              Un incident est un événement <strong>non souhaité</strong> qui peut affecter le bon déroulement d’une activité, mais qui <strong>n’entraîne pas forcément de dommage grave</strong> (blessure, perte matérielle importante, etc.).
+              Un <strong>incident</strong> est un <strong>événement imprévu et indésirable</strong> qui perturbe le déroulement normal d’une activité, mais qui <strong>n’entraîne pas forcément de dommage grave</strong> (blessure, dégât matériel important, etc.).
             </p>
             <p>
-              Dans un contexte de recherche ou de travail, il peut s’agir d’une erreur, d’un dysfonctionnement, d’un manquement aux procédures, ou d’une situation à risque détectée à temps.
+              Il peut résulter d’une erreur humaine, d’un défaut de procédure, d’un manque de formation ou d’une mauvaise organisation, et il sert souvent de <strong>signal d’alerte</strong> pour prévenir les accidents futurs.
             </p>
           </div>
 
           <div class="term-block">
             <h3>Complication</h3>
             <p>
-              Une complication est une <strong>conséquence inattendue</strong> (souvent défavorable) qui survient <strong>dans le cadre normal d’une situation connue ou d’une activité à risque</strong> (chirurgie, recherche clinique, travail dangereux, etc.).
+              Une <strong>complication</strong> est une <strong>conséquence inattendue</strong> mais liée à la nature même d’une situation ou d’un acte (médical, chirurgical, expérimental, etc.).
             </p>
             <p>
-              Elle est généralement liée à la nature du processus ou de la pathologie, même si les règles ont été respectées.
+              Elle survient même lorsque les règles sont respectées et que les risques ont été expliqués, d’où l’idée de <strong>« risque connu »</strong> ou <strong>« aléa thérapeutique »</strong> en médecine.
             </p>
           </div>
 
           <div class="term-block">
             <h3>Accident</h3>
             <p>
-              Un accident est un <strong>événement soudain, inopiné et involontaire</strong>, causant des dommages matériels ou corporels.
+              Un <strong>accident</strong> est un <strong>événement soudain, involontaire et imprévu</strong>, qui <strong>cause des dommages matériels ou corporels</strong> (blessure, handicap, voire décès).
             </p>
             <p>
-              Dans le travail ou la recherche, il survient souvent à la suite de risques mal gérés, d’une erreur ou d’une défaillance, et peut entraîner blessures, incapacité, voire décès.
+              En droit du travail français, un <strong>accident du travail</strong> est un événement survenant par le fait ou à l’occasion du travail et entraînant une lésion immédiate ou différée.
             </p>
           </div>
         </section>
 
+        <section id="dimensions" aria-labelledby="h-dimensions">
+          <h2 id="h-dimensions">2. Dimensions supplémentaires</h2>
+          <p>Gravité, prévisibilité et responsabilité permettent de nuancer les trois notions.</p>
+
+          <ul class="dimensions-block">
+            <li>
+              <h4>Gravité</h4>
+              <ul>
+                <li><strong>Incident</strong> : souvent <strong>mineur ou sans dommage</strong> visible, mais peut révéler un risque latent.</li>
+                <li><strong>Complication</strong> : <strong>variable</strong>, parfois sévère, mais intégrée dans le profil de risque du processus (ex. réaction allergique à un médicament).</li>
+                <li><strong>Accident</strong> : <strong>généralement grave</strong>, avec blessure, arrêt de travail, coût financier important, ou atteinte à l’environnement.</li>
+              </ul>
+            </li>
+            <li>
+              <h4>Prévisibilité et intention</h4>
+              <ul>
+                <li><strong>Incident</strong> : souvent <strong>prévisible</strong> : il met en évidence un défaut de prévention (règle non respectée, formation insuffisante, matériel non adapté).</li>
+                <li><strong>Complication</strong> : <strong>partiellement ou entièrement prévisible</strong> dans le cadre du risque associé (ex. complication post-opératoire).</li>
+                <li><strong>Accident</strong> : <strong>inattendu ou mal anticipé</strong>, mais souvent lié à une combinaison de facteurs évitables (défaut d’équipement, fatigue, manque de contrôle).</li>
+              </ul>
+            </li>
+            <li>
+              <h4>Responsabilité et faute</h4>
+              <ul>
+                <li><strong>Incident</strong> : lié à une <strong>négligence ou à une erreur évitable</strong> (oubli, non-respect des consignes, manque de vigilance).</li>
+                <li><strong>Complication</strong> : peut survenir <strong>sans faute du responsable</strong>, car elle est un risque inhérent au processus (« aléa thérapeutique »).</li>
+                <li><strong>Accident</strong> : peut engager une <strong>responsabilité civile ou pénale</strong> de l’employeur ou de l’organisateur si des mesures de sécurité n’ont pas été prises.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
         <section id="exemples" aria-labelledby="h-exemples">
-          <h2 id="h-exemples">2. Exemples concrets</h2>
+          <h2 id="h-exemples">3. Exemples nombreux et variés</h2>
 
-          <h3>Exemple d’incident (sans gravité apparente)</h3>
+          <h3>Incidents (sans blessure grave)</h3>
           <ul>
-            <li>En laboratoire de recherche : un étudiant casse un tube de réactif mais sans blessure ni fuite dangereuse.</li>
-            <li>Sur un chantier : un ouvrier laisse tomber un outil, qui ne touche personne mais aurait pu le faire.</li>
+            <li>En laboratoire : un étudiant fait tomber un flacon de produit corrosif, qui est immédiatement contenu sans exposition.</li>
+            <li>En entreprise : un employé ne verrouille pas une machine avant maintenance, mais personne n’est blessé grâce à l’alarme de sécurité.</li>
+            <li>En recherche clinique : un volontaire ne signe pas correctement le formulaire de consentement, découverte faite avant l’administration du médicament.</li>
           </ul>
 
-          <h3>Exemple de complication</h3>
+          <h3>Complications (risque connu)</h3>
           <ul>
-            <li>En médecine : un patient subit une chirurgie prévue et « sans faute médicale », mais développe une infection post-opératoire ou une réaction allergique imprévue.</li>
-            <li>En recherche clinique : un volontaire a une réaction secondaire grave à un médicament, alors que le protocole est bien appliqué et connu pour comporter ce risque.</li>
+            <li>Un patient subit une chirurgie cardiaque et développe une infection post-opératoire, malgré un protocole strict.</li>
+            <li>Un volontaire d’essai clinique présentant une fragilité individuelle développe une toxicité sévère à un nouveau médicament, alors que le risque était inscrit dans le dossier d’essai.</li>
+            <li>Un chercheur en sécurité chimique subit une réaction allergique après un contact prolongé avec un solvant, décrite comme possible dans la fiche de données de sécurité.</li>
           </ul>
 
-          <h3>Exemple d’accident</h3>
+          <h3>Accidents (avec dommages)</h3>
           <ul>
-            <li>Un travailleur de maintenance se fait écraser le bras dans une machine pendant une intervention.</li>
-            <li>Un chercheur manipule un produit inflammable sans précaution, provoque une explosion et subit des brûlures.</li>
+            <li>Un ouvrier de maintenance se fait broyer le bras dans une machine non consignée, ce qui entraîne une amputation partielle et un arrêt de travail long.</li>
+            <li>Un laborantin manipule un solvant inflammable sans extraction, provoque un incendie et subit des brûlures graves.</li>
+            <li>Un employé chute d’une échelle dans un hôpital, se fracture la cheville et doit être hospitalisé plusieurs jours.</li>
           </ul>
         </section>
 
         <section id="differences" aria-labelledby="h-differences">
-          <h2 id="h-differences">3. Points de différence principaux</h2>
-          <div class="table-wrap" role="region" aria-label="Tableau comparatif incident, complication, accident" tabindex="0">
+          <h2 id="h-differences">4. Tableau comparatif étoffé</h2>
+          <div class="table-wrap" role="region" aria-label="Tableau comparatif détaillé incident, complication, accident" tabindex="0">
             <table>
               <thead>
                 <tr>
@@ -450,45 +578,93 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Nature de l’événement</th>
-                  <td>Événement à risque ou manquement détecté</td>
+                  <th scope="row">Type d’événement</th>
+                  <td>Événement indésirable, souvent mineur</td>
                   <td>Conséquence inattendue mais possible dans le contexte</td>
-                  <td>Événement soudain, inopiné, avec dommages</td>
+                  <td>Événement soudain causant dommages matériels ou corporels</td>
                 </tr>
                 <tr>
-                  <th scope="row">Niveau de gravité</th>
-                  <td>Souvent mineur, parfois sans dommage</td>
-                  <td>Variable, souvent significatif mais prévu dans le risque</td>
-                  <td>Généralement grave (blessure, dégâts)</td>
+                  <th scope="row">Gravité typique</th>
+                  <td>Souvent sans ou faibles dommages</td>
+                  <td>Variable, parfois sévère mais « normale » dans le risque</td>
+                  <td>Généralement grave (blessure, handicap, coût élevé)</td>
                 </tr>
                 <tr>
-                  <th scope="row">Peut-on l’éviter ?</th>
-                  <td>Oui, grâce au respect des règles et au contrôle</td>
-                  <td>Parfois non, même avec bonne exécution</td>
-                  <td>Souvent évitable par meilleure prévention</td>
+                  <th scope="row">Prévisibilité / contrôle</th>
+                  <td>En grande partie <strong>prévisible et évitable</strong></td>
+                  <td>Partiellement ou non contrôlable, même avec bonne pratique</td>
+                  <td>Souvent <strong>évitables</strong> par de meilleures mesures de prévention</td>
                 </tr>
                 <tr>
-                  <th scope="row">Cadre typique</th>
-                  <td>Travail, recherche, transport, sécurité</td>
-                  <td>Surtout médical et recherche clinique</td>
-                  <td>Travail, laboratoire, transports, industrie</td>
+                  <th scope="row">Cause principale</th>
+                  <td>Erreur humaine, manque de procédure, mauvaise organisation</td>
+                  <td>Nature du processus ou de la pathologie</td>
+                  <td>Défaillance système, équipement, ou non-respect des consignes</td>
                 </tr>
                 <tr>
                   <th scope="row">Responsabilité / faute</th>
-                  <td>Souvent liée à une erreur ou négligence</td>
-                  <td>Peut être « aléa thérapeutique » ou risque connu</td>
-                  <td>Souvent liée à faute ou défaut de sécurité</td>
+                  <td>Souvent liée à une négligence ou défaut de contrôle</td>
+                  <td>Peut être « sans faute » (aléa thérapeutique)</td>
+                  <td>Engage souvent une responsabilité (employeur, chercheur, etc.)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Exemple en recherche clinique</th>
+                  <td>Volontaire perd un document, mais pas de conséquence médicale</td>
+                  <td>Un patient développe une réaction grave prévue dans le protocole</td>
+                  <td>Un volontaire est gravement touché et hospitalisé après une erreur de dosage</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
 
-        <section id="distinguer" aria-labelledby="h-distinguer">
-          <h2 id="h-distinguer">4. Comment les distinguer dans un travail de recherche ou de stage ?</h2>
-          <p>
-            Pour ne pas confondre ces trois termes, on peut se poser deux questions simples, inspirées des guides de gestion des incidents médicaux et de sécurité :
-          </p>
+        <section id="notions" aria-labelledby="h-notions">
+          <h2 id="h-notions">5. Notions connexes utiles</h2>
+
+          <div class="notion-card">
+            <h3>Quasi-accident (near-miss)</h3>
+            <p>
+              Événement qui <strong>n’a pas causé de blessure ou de dommage</strong>, mais <strong>aurait pu</strong> en entraîner de sérieux.
+            </p>
+            <p>
+              Exemple : un employé glisse sur le sol mouillé, se rattrape, mais ne tombe pas. C’est un quasi-accident à signaler et à analyser.
+            </p>
+          </div>
+
+          <div class="notion-card">
+            <h3>Maladie professionnelle</h3>
+            <p>
+              À distinguer de l’accident : elle résulte d’une <strong>exposition prolongée</strong> à un risque au travail (produits chimiques, bruit, vibrations, etc.).
+            </p>
+          </div>
+
+          <div class="notion-card">
+            <h3>Culture de sécurité</h3>
+            <p>
+              En entreprise, en hôpital ou en laboratoire, on insiste pour <strong>déclarer tous les incidents</strong> (même mineurs) afin d’identifier les causes profondes et d’éviter accidents et complications.
+            </p>
+          </div>
+        </section>
+
+        <section id="recherche" aria-labelledby="h-recherche">
+          <h2 id="h-recherche">6. Repères pour un travail de recherche ou de stage</h2>
+          <p>Pour un devoir, un rapport de stage ou la recherche clinique, on peut structurer ainsi :</p>
+
+          <ul>
+            <li>
+              <strong>Définir clairement</strong> :
+              <ul>
+                <li><strong>Incident</strong> — événement indésirable pouvant mener à un dommage mais sans conséquence grave.</li>
+                <li><strong>Complication</strong> — événement défavorable lié à la nature de l’acte ou du processus.</li>
+                <li><strong>Accident</strong> — événement soudain causant une lésion ou un dommage.</li>
+              </ul>
+            </li>
+            <li><strong>Donner des exemples concrets</strong> dans le contexte du stage (laboratoire, hôpital, entreprise).</li>
+            <li><strong>Analyser un incident</strong> : causes (humaines, organisationnelles), conséquences possibles, mesures correctives.</li>
+            <li>Montrer que la <strong>gestion des incidents</strong> permet de <strong>réduire accidents et complications</strong> (formation, consignes, équipements de protection).</li>
+          </ul>
+
+          <h3>Deux questions pour distinguer les termes</h3>
           <div class="howto">
             <p><strong>1. Pouvait-on éviter l’événement ?</strong></p>
             <ul>
@@ -506,7 +682,7 @@
 
         <aside class="outro" aria-label="Pistes complémentaires">
           <p>
-            Ce contenu peut servir de base pour une <strong>fiche de révision</strong> (format court, style QCM) ou un <strong>plan détaillé</strong> de compte-rendu (introduction, développement, conclusion).
+            Ce contenu peut servir de base pour une <strong>introduction et une conclusion</strong>, un <strong>plan de mémoire</strong> (titres et sous-titres), ou une <strong>fiche A4 de révision</strong> (QCM et repères).
           </p>
         </aside>
       </div>
